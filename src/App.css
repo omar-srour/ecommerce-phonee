@@ -1,0 +1,328 @@
+/* app.css */
+body {
+  background-color: #f0f0f0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  color: blue;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+  margin-left: 150px;
+}
+
+.shopcart a {
+  margin-right: 190px;
+  display: flex;
+  text-decoration: none;
+  color: white;
+  width: 24px;
+}
+
+.shopcart p {
+  margin-left: 8px;
+  font-size: 18px;
+  margin-top: 13px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      padding: 2px 0;
+  }
+
+  .navbar-brand {
+      margin-left: 0;
+      font-size: large;
+  }
+
+  .shopcart a {
+      margin-right: 25px;
+  }
+
+  .shopcart p {
+      font-size: 16px;
+      margin-left: 4px;
+  }
+}
+
+/* Home Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* تقسيم الصفحة إلى عمودين متساويين */
+  height: 100vh;
+}
+
+.left-section, .right-section {
+  padding: 20px;
+}
+
+.left-section {
+  background-color: #f0f0f0;
+}
+
+.right-section {
+  background-color: #dcdcdc;
+}
+
+/* OrderFilter */
+.list-group {
+  padding-top: 30px;
+}
+
+/* Product List */
+.card {
+  width: 300px;
+  padding: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s ease, box-shadow 0.1s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-btn {
+  padding: 8px 40px;
+  background-color: #1659bd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 30px;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05);
+}
+
+.card-body a {
+  text-decoration: none;
+  color: #1659bd;
+}
+
+/* Shipping Cart */
+.Shipping {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
+.card-header h3 {
+  font-size: x-large;
+  width: 100%;
+  height: 50px;
+  color: white;
+  margin-left: 15px;
+}
+
+.cardtext {
+  display: flex;
+  align-items: center;
+}
+
+.palse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+}
+
+.salary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.salary h3 {
+  margin-right: 20px;
+}
+
+.quantity {
+  float: left;
+  margin-right: 15px;
+  background-color: #eee;
+  position: relative;
+  width: 80px;
+  overflow: hidden;
+}
+
+.quantity input {
+  margin: 0;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  float: right;
+  color: #000;
+  font-size: 20px;
+  border: 0;
+  outline: 0;
+  background-color: #F6F6F6;
+}
+
+.quantity input.qty {
+  position: relative;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px 25px 10px 10px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 0;
+  background-clip: padding-box;
+ 
+}
+
+.quantity .minus, .quantity .plus {
+  line-height: 0;
+  border-radius: 0;
+  color: #bbb;
+  font-size: 20px;
+  position: absolute;
+  height: 50%;
+  border: 0;
+  right: 0;
+  padding: 0;
+  width: 25px;
+  z-index: 3;
+}
+
+.quantity .minus:hover, .quantity .plus:hover {
+  background-color: #dad8da;
+}
+
+.quantity .minus {
+  bottom: 0;
+}
+
+.btn-outline-danger {
+  margin-right: 10px; /* تعديل المسافة حسب الرغبة */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .palse {
+      flex-direction: column; /* تحول إلى عمود على الشاشات الصغيرة */
+  }
+
+  .cardtext,
+  .salary {
+      flex: 1 1 100%; /* يجعل كل عنصر يشغل 100% */
+      align-items: center; /* محاذاة العناصر في المركز */
+      text-align: center; /* محاذاة النص في الوسط */
+  }
+
+  .salary {
+      margin-top: 10px; /* فاصلة بين العناصر */
+  }
+}
+
+/* Total Price */
+.totalprice {
+  height: 70px;
+  color: rgb(34, 12, 12);
+  text-align: end;
+  display: flex;
+  justify-content: end;
+  background-color: rgb(238, 235, 235);
+}
+
+.totalprice h5 {
+  margin-top: 25px;
+  margin-right: 15px;
+}
+
+/* Product Detail Container */
+.product-detail-container {
+  display: flex; /* استخدام flexbox لتنسيق المحتوى بجانب بعضه */
+  flex-wrap: wrap; /* السماح بالتفاف المحتوى في الشاشات الصغيرة */
+  justify-content: center; /* محاذاة العناصر في الوسط */
+  align-items: center; /* محاذاة العناصر عموديًا في المركز */
+  max-width: 1200px; /* أقصى عرض للحاوية */
+  margin: 0 auto; /* مركزة الحاوية في الصفحة */
+  padding: 20px; /* إضافة بعض الهوامش */
+}
+
+/* Product Image */
+.product-image {
+  flex: 0 0 auto; /* عدم السماح للصورة بالنمو */
+  max-width: 400px; /* أقصى عرض للصورة (زيادة الحجم) */
+  width: 100%; /* عرض الصورة بنسبة 100% */
+  margin-right: 20px; /* مسافة بين الصورة والبيانات */
+}
+
+/* Card Body */
+.card-bodyy {
+  flex: 1; /* السماح لبيانات المنتج بأخذ مساحة أكبر */
+  background-color: #ffffff; /* خلفية بيضاء */
+  border-radius: 8px; /* زوايا دائرية */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+  padding: 20px; /* هوامش داخلية */
+  text-align: center; /* محاذاة النص في الوسط */
+}
+
+/* Image Fluid */
+.img-fluid {
+  width: 100%; /* عرض الصورة بنسبة 100% */
+  height: auto; /* ارتفاع تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+  border-radius: 8px; /* زوايا دائرية للصورة */
+}
+
+/* Title */
+.title {
+  font-size: 26px; /* حجم خط أكبر للعناوين */
+  color: #343a40; /* لون نص داكن */
+  margin-bottom: 15px; /* هامش أسفل العنوان */
+}
+
+/* Price Detail Wrap */
+.price-detail-wrap {
+  margin-bottom: 20px; /* هامش أسفل سعر المنتج */
+}
+
+/* Button Styles */
+.btnn {
+  width: 100%; /* عرض الزر بنسبة 100% */
+  padding: 12px; /* هوامش داخلية للزر */
+  border-radius: 5px; /* زوايا دائرية للزر */
+}
+
+/* Button Outline Primary */
+.btn-outline-primary {
+  background-color: transparent; /* خلفية شفافة */
+  border: 2px solid #007bff; /* لون حدود الزر */
+  color: #007bff; /* لون النص */
+  transition: background-color 0.3s, color 0.3s; /* تأثير انتقال */
+}
+
+/* Button Hover Effect */
+.btn-outline-primary:hover {
+  background-color: #007bff; /* تغيير الخلفية */
+  color: #ffffff; /* تغيير لون النص */
+}
+
+
